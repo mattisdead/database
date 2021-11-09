@@ -56,7 +56,6 @@ namespace lab2
             string command = $"INSERT INTO posts (post_id, post_text, user_id, comment_id) VALUES ({post.postId}, '{post.postText}', {post.userId}, {post.commentId});";
 
             NpgsqlCommand cmd = new NpgsqlCommand(command, connection);
-            //if (cmd.ExecuteScalar() == null) return false;
             cmd.ExecuteScalar();
 
             UserRepo userRepo = new UserRepo(connection);
